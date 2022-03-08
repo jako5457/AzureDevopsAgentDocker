@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  agent:
+    image: azure_pipeline_agent:latest
+    environment:
+      - AZP_URL=<Azure DevOps instance>
+      - AZP_TOKEN=<PAT token>
+      - AZP_AGENT_NAME=mydockeragent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
